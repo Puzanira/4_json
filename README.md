@@ -1,20 +1,42 @@
 # Prettify JSON
 
-[TODO. There will be project description]
+Simple console script to look at .json file
 
-# Quickstart
+### What it does:
 
-[TODO]
+Opens a raw .json file and then prints it in your 
+ terminal with spaces and indentations in an _easy-to-read_ way
+  
 
-Example of script launch on Linux, Python 3.5:
+### How to use:
+
+Example of script **launch** on Linux, Python 3.5:
 
 ```bash
 
 $ python pprint_json.py <path to file>
-# TODO add output example
-
+```
+**Raw JSON file:**
+```json
+{"employees":[{ "firstName":"John", "lastName":"Doe" },{ "firstName":"Anna", "lastName":"Smith" }]}
 ```
 
+**Output:**
+```json
+{
+    "employees": [
+        {
+            "firstName": "John",
+            "lastName": "Doe"
+        },
+        {
+            "firstName": "Anna",
+            "lastName": "Smith"
+        }
+    ]
+}
+
+```
 # Project Goals
 
 The code is written for educational purposes. Training course for web-developers - [DEVMAN.org](https://devman.org)
