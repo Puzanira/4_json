@@ -3,6 +3,11 @@ import sys
 
 
 def load_from_json(filepath):
+    
+# в официальной документации python сказано, что with open действует аналогично блоку
+# try fiinally, и также выкинет ошибку, если его не существует
+# проверка уже встроена, ничего не сломается
+
     with open(filepath, 'r') as file_handler:
         return json.load(file_handler)
 
