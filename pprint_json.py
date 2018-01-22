@@ -1,14 +1,9 @@
 import json
 import sys
+import os
 
 
 def load_from_json(filepath):
-    '''
-    в официальной документации python сказано, что with open
-    действует аналогично блоку
-    try finally и также выкинет ошибку, если его не существует
-    проверка уже встроена
-    '''
     with open(filepath, 'r') as file_handler:
         return json.load(file_handler)
 
@@ -22,5 +17,9 @@ if __name__ == '__main__':
         print('Error: define file path')
         print('Usage example: python pprint_json.py <path to file>')
     else:
-        json_data = load_from_json(sys.argv[1])
-        pretty_print_json(json_data)
+        if os.path.isfile(sys.argv[1]):
+            json_data = load_from_json(sys.argv[1])
+            pretty_print_json(json_data)
+        else:
+            print('Error: No such file in directory')
+
